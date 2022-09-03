@@ -9,6 +9,9 @@ module.exports = {
         'preto': '#16161A',
       }
     },
+    fontFamily: {
+      body: ['"Montserrat"']
+    }
   },
   plugins: [],
 }
