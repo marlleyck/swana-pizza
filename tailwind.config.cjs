@@ -7,6 +7,9 @@ module.exports = {
     extend: {
       colors: {
         'preto': '#16161A',
+      },
+      backgroundImage: {
+        'bg-main': "url('./src/img/pizza-backg.jpg')"
       }
     },
     fontFamily: {
