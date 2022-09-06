@@ -9,8 +9,10 @@ function App() {
     <Router>
       <Routes>
         <Route path='/' element={ <Home /> } />
-        
+
         <Route path='/options' element={ <Options /> } />
+
+        <Route path='/cart' />
       </Routes>
     </Router>
   )
