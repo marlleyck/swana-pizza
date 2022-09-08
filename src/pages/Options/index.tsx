@@ -1,5 +1,4 @@
 import { useState } from "react"
-import Modal from 'react-modal'
 import { Button } from "../../components/Button"
 
 import { Footer } from "../../components/Footer"
@@ -13,9 +12,6 @@ import Pizza5 from '../../img/pizzas/pizza5.png'
 import Pizza6 from '../../img/pizzas/pizza6.png'
 import Pizza7 from '../../img/pizzas/pizza7.png'
 
-import styles from './Modal.module.scss'
-
-Modal.setAppElement('#root')
 
 export const Options = () => {
     return (
