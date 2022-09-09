@@ -1,0 +1,57 @@
+.modal {
+    width: 100%;
+    max-width: 576px;
+    font-family: 'Montserrat';
+    background: #F0F2F5;;
+    padding: 3rem;
+    position: relative;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    outline: none;
+    gap: 2rem;
+
+    h2 {
+        font-size: 2.8rem;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    button {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: white;
+        background-color: orange;
+        padding: 10px;
+        border-radius: 15px;
+        transition: .3s;
+
+        &:hover {
+            filter: brightness(0.9);
+        }
+    }
+}
+
+.modal_overlay {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 20px 20px 0 0;
+    cursor: pointer;
+}
