@@ -7,6 +7,7 @@ import { Footer } from "../../components/Footer"
 import { Header } from "../../components/Header"
 
 import { PizzaItem } from '../../types/PizzaItem'
+import { PizzaJson } from '../../types/PizzaJson'
 
 import Pizza1 from '../../img/pizzas/pizza.png'
 import Pizza2 from '../../img/pizzas/pizza2.png'
@@ -17,7 +18,7 @@ import Pizza6 from '../../img/pizzas/pizza6.png'
 import Pizza7 from '../../img/pizzas/pizza7.png'
 
 import styles from './Modal.module.scss'
-import { PizzaJson } from '../../types/PizzaJson'
+
 
 Modal.setAppElement('#root')
 
@@ -29,7 +30,7 @@ export const Options = () => {
 
     const [pizzas, setPizzas] = useState<PizzaJson>()
 
-    let targetPizza: string;
+    let targetPizza: String = '';
 
     useEffect(() => {
         fetch('../../../pizzas.json', {
@@ -78,63 +79,90 @@ export const Options = () => {
 
             <main className="w-full h-[calc(100vh_-_4rem)] bg-bg-option bg-center bg-no-repeat bg-cover flex items-center justify-center">
                 <div className="w-full h-full grid grid-cols-4 justify-items-center content-center gap-10">
-                    <div className="text-center text-white font-bold text-lg cursor-pointer font-['Montserrat']">
+                    <div className="pizza-1 text-center text-white font-bold text-lg cursor-pointer font-['Montserrat']">
                             <img src={Pizza1} alt="pizza-1"
                             className="w-40 hover:scale-105 mb-4 duration-100"
-                            onClick={(e) => showModal(e)}/>
+                            onClick={(e) => showModal(e)} />
 
                             <p>Portuguesa</p>
 
-                        
-                        <Button name='Adicionar' />
+                        <Button name='Adicionar' 
+                            setModalIsOpen={setModalIsOpen} 
+                            setTitleModal={setTitleModal}
+                            setPizzaImage={setPizzaImage}
+                            setPizzaDesc={setPizzaDesc} />
                     </div>
-                    <div className="text-center text-white font-bold text-lg cursor-pointer font-['Montserrat']">
+                    <div className="pizza-2 text-center text-white font-bold text-lg cursor-pointer font-['Montserrat']">
                             <img src={Pizza2} alt="pizza-2" 
                             className="w-40 hover:scale-105 mb-4 duration-100" 
                             onClick={(e) => showModal(e)} />
                         <p>Gorgonzola</p>
                         
-                        <Button name='Adicionar' />
+                        <Button name='Adicionar' 
+                            setModalIsOpen={setModalIsOpen} 
+                            setTitleModal={setTitleModal}
+                            setPizzaImage={setPizzaImage}
+                            setPizzaDesc={setPizzaDesc} />
                     </div>
-                    <div className="text-center text-white font-bold text-lg cursor-pointer font-['Montserrat']">
+                    <div className="pizza-3 text-center text-white font-bold text-lg cursor-pointer font-['Montserrat']">
                             <img src={Pizza3} alt="pizza-3" 
                             className="w-40 hover:scale-105 mb-4 duration-100"
                             onClick={(e) => showModal(e)} />
                         <p>Nordestina</p>
                         
-                        <Button name='Adicionar' />
+                        <Button name='Adicionar' 
+                            setModalIsOpen={setModalIsOpen} 
+                            setTitleModal={setTitleModal}
+                            setPizzaImage={setPizzaImage}
+                            setPizzaDesc={setPizzaDesc} />
                     </div>
-                    <div className="text-center text-white font-bold text-lg cursor-pointer font-['Montserrat']">
+                    <div className="pizza-4 text-center text-white font-bold text-lg cursor-pointer font-['Montserrat']">
                             <img src={Pizza4} alt="pizza-4" 
                             className="w-40 hover:scale-105 mb-4 duration-100"
                             onClick={(e) => showModal(e)} />
                         <p>Quatro Queijos</p>
                         
-                        <Button name='Adicionar' />
+                        <Button name='Adicionar' 
+                            setModalIsOpen={setModalIsOpen} 
+                            setTitleModal={setTitleModal}
+                            setPizzaImage={setPizzaImage}
+                            setPizzaDesc={setPizzaDesc} />
                     </div>
-                    <div className="text-center text-white font-bold text-lg cursor-pointer font-['Montserrat']">
+                    <div className="pizza-5 text-center text-white font-bold text-lg cursor-pointer font-['Montserrat']">
                             <img src={Pizza5} alt="pizza-5" 
                             className="w-40 hover:scale-105 mb-4 duration-100"
                             onClick={(e) => showModal(e)} />
                         <p>Calabresa</p>
                         
-                        <Button name='Adicionar' />
+                        <Button name='Adicionar' 
+                            setModalIsOpen={setModalIsOpen} 
+                            setTitleModal={setTitleModal}
+                            setPizzaImage={setPizzaImage}
+                            setPizzaDesc={setPizzaDesc} />
                     </div>
-                    <div className="text-center text-white font-bold text-lg cursor-pointer font-['Montserrat']">
+                    <div className="pizza-6 text-center text-white font-bold text-lg cursor-pointer font-['Montserrat']">
                             <img src={Pizza6} alt="pizza-6" 
                             className="w-40 hover:scale-105 mb-4 duration-100"
                             onClick={(e) => showModal(e)} />
                         <p>Dois Queijos</p>
                         
-                        <Button name='Adicionar'/>
+                        <Button name='Adicionar' 
+                            setModalIsOpen={setModalIsOpen} 
+                            setTitleModal={setTitleModal}
+                            setPizzaImage={setPizzaImage}
+                            setPizzaDesc={setPizzaDesc} />
                     </div>
-                    <div className="text-center text-white font-bold text-lg cursor-pointer font-['Montserrat']">
+                    <div className="pizza-7 text-center text-white font-bold text-lg cursor-pointer font-['Montserrat']">
                             <img src={Pizza7} alt="pizza-7" 
                             className="w-40 hover:scale-105 mb-4 duration-100"
                             onClick={(e) => showModal(e)} />
                         <p>Chocolate</p>
                         
-                        <Button name='Adicionar' />
+                        <Button name='Adicionar' 
+                            setModalIsOpen={setModalIsOpen} 
+                            setTitleModal={setTitleModal}
+                            setPizzaImage={setPizzaImage}
+                            setPizzaDesc={setPizzaDesc} />
                     </div>
                 </div>
             </main>
