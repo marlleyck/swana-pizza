@@ -3,43 +3,43 @@
         {
             "id": 1,
             "name": "Portuguesa",
-            "description": "Pizza portguesa ne pae",
+            "description": "Pizza portuguesa feita com molho especial da casa, queijo, presunto, orégano, cebola e ovo.",
             "img": "./src/img/pizzas/pizza.png"
         },
         {
             "id": 2,
             "name": "Gorgonzola",
-            "description": "Pizza gorgonzola ne pae",
+            "description": "Pizza gorgonzola feita com molho especial da casa, queijo gorgonzola, presunto, orégano, cebola e calabresa.",
             "img": "./src/img/pizzas/pizza2.png"
         },
         {
             "id": 3,
             "name": "Nordestina",
-            "description": "Pizza nordestina ne pae",
+            "description": "Pizza nordestina feita com molho especial da casa, queijo, presunto, orégano, cebola, ovo e calabresa.",
             "img": "./src/img/pizzas/pizza3.png"
         },
         {
             "id": 4,
             "name": "Quatro Queijos",
-            "description": "Pizza quatro queijos ne pae",
+            "description": "Pizza quatro queijos feita com molho especial da casa, queijo muzzarela, queijo gorgonzola, queijo permesão, queijo ralado, presunto, orégano e cebola.",
             "img": "./src/img/pizzas/pizza4.png"
         },
         {
             "id": 5,
             "name": "Calabresa",
-            "description": "Pizza calabresa ne pae",
+            "description": "Pizza calabresa feita com molho especial da casa, queijo, presunto, orégano, cebola, calabresa e catupiry.",
             "img": "./src/img/pizzas/pizza5.png"
         },
         {
             "id": 6,
             "name": "Dois Queijos",
-            "description": "Pizza dois queijos ne pae",
+            "description": "Pizza dois queijos feita com molho especial da casa, queijo muzzarela, queijo parmesão, presunto, orégano, cebola e catupiry.",
             "img": "./src/img/pizzas/pizza6.png"
         },
         {
             "id": 7,
             "name": "Chocolate",
-            "description": "Pizza chocolate ne pae",
+            "description": "Pizza de chocolate com M&Ms.",
             "img": "./src/img/pizzas/pizza7.png"
         }
 
