@@ -1,10 +1,12 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Modal from 'react-modal'
 import { Button } from "../../components/Button"
 import iconClose from '../../img/close.svg'
 
 import { Footer } from "../../components/Footer"
 import { Header } from "../../components/Header"
+
+import { PizzaJson } from '../../types/PizzaJson'
 
 import Pizza1 from '../../img/pizzas/pizza.png'
 import Pizza2 from '../../img/pizzas/pizza2.png'
@@ -22,35 +24,34 @@ export const Options = () => {
     const [modalIsOpen, setModalIsOpen] = useState(false)
     const [titleModal, setTitleModal] = useState('')
     const [pizzaImage, setPizzaImage] = useState('')
+    const [pizzaDesc, setPizzaDesc] = useState('')
+
+    const [pizzas, setPizzas] = useState<PizzaJson>()
 
     let targetPizza: string;
 
-    const showModal = (e: any) => {
-        targetPizza = e.target.attributes.alt.nodeValue
-        
+    useEffect(() => {
+        fetch('../../../pizzas.json', {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then((data) => setPizzas(data))
+    }, [])
 
-        if (targetPizza === 'pizza-1') {
-            setTitleModal('Portuguesa')
-            setPizzaImage(Pizza1)
-        } else if (targetPizza === 'pizza-2') {
-            setTitleModal('Gorgonzola')
-            setPizzaImage(Pizza2)
-        } else if (targetPizza === 'pizza-3') {
-            setTitleModal('Nordestina')
-            setPizzaImage(Pizza3)
-        } else if (targetPizza === 'pizza-4') {
-            setTitleModal('Quatro Queijos')
-            setPizzaImage(Pizza4)
-        } else if (targetPizza === 'pizza-5') {
-            setTitleModal('Calabresa')
-            setPizzaImage(Pizza5)
-        } else if (targetPizza === 'pizza-6') {
-            setTitleModal('Dois Queijos')
-            setPizzaImage(Pizza6)
-        } else if (targetPizza === 'pizza-7') {
-            setTitleModal('Chocolate')
-            setPizzaImage(Pizza7)
-        }
+    const showModal = (e: any) => {
+        targetPizza = e.target.attributes.alt.nodeValue.split('-')
+        console.log(targetPizza[1])
+
+        pizzas?.data.map((item) => {
+            if (item.id === Number(targetPizza[1])) {
+                console.log(item)
+                setTitleModal(item.name)
+                setPizzaImage(item.img)
+                setPizzaDesc(item.description)
+            }
+        })
 
         setModalIsOpen(true)
     }
@@ -72,7 +73,7 @@ export const Options = () => {
                         <img 
                             src={pizzaImage}
                             className='w-52' />   
-                        <p>Pizza gostosinha feita a mao no forninho com carvao naquele pique que tu gosta que eu sei vius</p> 
+                        <p>{pizzaDesc}</p> 
                         <button type='button'>Adicionar ao carrinho</button>                
             </Modal>
 

@@ -1,0 +1,47 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "Portuguesa",
+            "description": "Pizza portguesa ne pae",
+            "img": "./src/img/pizzas/pizza.png"
+        },
+        {
+            "id": 2,
+            "name": "Gorgonzola",
+            "description": "Pizza gorgonzola ne pae",
+            "img": "./src/img/pizzas/pizza2.png"
+        },
+        {
+            "id": 3,
+            "name": "Nordestina",
+            "description": "Pizza nordestina ne pae",
+            "img": "./src/img/pizzas/pizza3.png"
+        },
+        {
+            "id": 4,
+            "name": "Quatro Queijos",
+            "description": "Pizza quatro queijos ne pae",
+            "img": "./src/img/pizzas/pizza4.png"
+        },
+        {
+            "id": 5,
+            "name": "Calabresa",
+            "description": "Pizza calabresa ne pae",
+            "img": "./src/img/pizzas/pizza5.png"
+        },
+        {
+            "id": 6,
+            "name": "Dois Queijos",
+            "description": "Pizza dois queijos ne pae",
+            "img": "./src/img/pizzas/pizza6.png"
+        },
+        {
+            "id": 7,
+            "name": "Chocolate",
+            "description": "Pizza chocolate ne pae",
+            "img": "./src/img/pizzas/pizza7.png"
+        }
+
+    ]
+}
