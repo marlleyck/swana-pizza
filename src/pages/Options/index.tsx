@@ -42,11 +42,9 @@ export const Options = () => {
 
     const showModal = (e: any) => {
         targetPizza = e.target.attributes.alt.nodeValue.split('-')
-        console.log(targetPizza[1])
 
         pizzas?.data.map((item) => {
             if (item.id === Number(targetPizza[1])) {
-                console.log(item)
                 setTitleModal(item.name)
                 setPizzaImage(item.img)
                 setPizzaDesc(item.description)
