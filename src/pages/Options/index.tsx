@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Modal from 'react-modal'
-import { Link } from "react-router-dom"
 import { Button } from "../../components/Button"
+import iconClose from '../../img/close.svg'
 
 import { Footer } from "../../components/Footer"
 import { Header } from "../../components/Header"
@@ -13,6 +13,8 @@ import Pizza4 from '../../img/pizzas/pizza4.png'
 import Pizza5 from '../../img/pizzas/pizza5.png'
 import Pizza6 from '../../img/pizzas/pizza6.png'
 import Pizza7 from '../../img/pizzas/pizza7.png'
+
+import styles from './Modal.module.scss'
 
 Modal.setAppElement('#root')
 
@@ -58,9 +60,19 @@ export const Options = () => {
 
             <Modal 
                 isOpen={modalIsOpen}
-                onRequestClose={() => setModalIsOpen(false)}>
-                    <h2>{titleModal}</h2>
-                    <img src={pizzaImage} />
+                onRequestClose={() => setModalIsOpen(false)}
+                className={styles.modal}
+                overlayClassName={styles.modal_overlay}>
+                        <img 
+                            className={styles.close} 
+                            src={iconClose} alt="close"
+                            onClick={() => setModalIsOpen(false)} />
+                        <h2>{titleModal}</h2>
+                        <img 
+                            src={pizzaImage}
+                            className='w-52' />   
+                        <p>Pizza gostosinha feita a mao no forninho com carvao naquele pique que tu gosta que eu sei vius</p> 
+                        <button type='button'>Adicionar ao carrinho</button>                
             </Modal>
 
             <main className="w-full h-[calc(100vh_-_4rem)] bg-bg-option bg-center bg-no-repeat bg-cover flex items-center justify-center">
@@ -69,7 +81,9 @@ export const Options = () => {
                             <img src={Pizza1} alt="pizza-1"
                             className="w-40 hover:scale-105 mb-4"
                             onClick={(e) => showModal(e)}/>
-                        <p>Portuguesa</p>
+
+                            <p>Portuguesa</p>
+
                         
                         <Button name='Adicionar' />
                     </div>
