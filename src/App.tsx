@@ -2,6 +2,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 
 import { Home } from './pages/Home'
 import { Options } from './pages/Options'
+import { Cart } from './pages/Cart'
 
 function App() {
 
@@ -12,7 +13,7 @@ function App() {
 
         <Route path='/options' element={ <Options /> } />
 
-        <Route path='/cart' />
+        <Route path='/cart' element={ <Cart /> } />
       </Routes>
     </Router>
   )
