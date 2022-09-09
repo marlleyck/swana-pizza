@@ -72,7 +72,23 @@ export const Options = () => {
                         <h2>{titleModal}</h2>
                         <img 
                             src={pizzaImage}
-                            className='w-52' />   
+                            className='w-52' />
+                        <div className='w-full h-full flex items-center justify-center gap-4 font-["Montserrat"] text-4xl'>
+                            <div className='flex items-center'>
+                                <input type="radio" id='P' name='pizza-choose' className='w-10 h-10' />
+                                <label htmlFor="P">P</label>
+                            </div>
+
+                            <div className='flex items-center'>
+                                <input type="radio" id='M' name='pizza-choose' className='w-10 h-10' />
+                                <label htmlFor="M">M</label>
+                            </div>
+
+                            <div className='flex items-center'>
+                                <input type="radio" id="G" name='pizza-choose' className='w-10 h-10' />
+                                <label htmlFor="G">G</label>
+                            </div>
+                        </div>   
                         <p>{pizzaDesc}</p> 
                         <button type='button'>Adicionar ao carrinho</button>                
             </Modal>
