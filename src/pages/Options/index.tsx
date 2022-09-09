@@ -6,7 +6,7 @@ import iconClose from '../../img/close.svg'
 import { Footer } from "../../components/Footer"
 import { Header } from "../../components/Header"
 
-import { PizzaJson } from '../../types/PizzaJson'
+import { PizzaItem } from '../../types/PizzaItem'
 
 import Pizza1 from '../../img/pizzas/pizza.png'
 import Pizza2 from '../../img/pizzas/pizza2.png'
@@ -17,6 +17,7 @@ import Pizza6 from '../../img/pizzas/pizza6.png'
 import Pizza7 from '../../img/pizzas/pizza7.png'
 
 import styles from './Modal.module.scss'
+import { PizzaJson } from '../../types/PizzaJson'
 
 Modal.setAppElement('#root')
 
@@ -43,7 +44,7 @@ export const Options = () => {
     const showModal = (e: any) => {
         targetPizza = e.target.attributes.alt.nodeValue.split('-')
 
-        pizzas?.data.map((item) => {
+        pizzas?.data.map((item: PizzaItem) => {
             if (item.id === Number(targetPizza[1])) {
                 setTitleModal(item.name)
                 setPizzaImage(item.img)
