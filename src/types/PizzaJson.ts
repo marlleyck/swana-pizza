@@ -1,11 +1,5 @@
+import { PizzaItem } from "./PizzaItem"
+
 export type PizzaJson = {
-    data: 
-        [
-            {
-                "id": number;
-                "name": string;
-                "description": string;
-                "img": string;
-            },
-        ]
+    data: PizzaItem[];
 }
