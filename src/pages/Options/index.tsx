@@ -27,6 +27,7 @@ export const Options = () => {
     const [titleModal, setTitleModal] = useState('')
     const [pizzaImage, setPizzaImage] = useState('')
     const [pizzaDesc, setPizzaDesc] = useState('')
+    const [quant, setQuant] = useState(0)
 
     const [pizzas, setPizzas] = useState<PizzaJson>()
 
@@ -56,6 +57,17 @@ export const Options = () => {
         setModalIsOpen(true)
     }
 
+    const handleQuantM = () => {
+        if (quant > 0) {
+            setQuant((state) => state - 1)
+        }
+    }
+
+    const handleQuantP = () => {
+        setQuant((state) => state + 1)
+    }
+
+
     return (
         <>
             <Header />
@@ -69,26 +81,38 @@ export const Options = () => {
                             className={styles.close} 
                             src={iconClose} alt="close"
                             onClick={() => setModalIsOpen(false)} />
-                        <h2>{titleModal}</h2>
-                        <img 
-                            src={pizzaImage}
-                            className='w-52' />
-                        <div className='w-full h-full flex items-center justify-center gap-4 font-["Montserrat"] text-4xl'>
-                            <div className='flex items-center'>
-                                <input type="radio" id='P' name='pizza-choose' className='w-10 h-10' />
-                                <label htmlFor="P">P</label>
-                            </div>
 
-                            <div className='flex items-center'>
-                                <input type="radio" id='M' name='pizza-choose' className='w-10 h-10' />
-                                <label htmlFor="M">M</label>
-                            </div>
+                        <div className='flex items-center justify-center flex-col'>
+                            <h2>{titleModal}</h2>
+                            
+                            <img
+                                src={pizzaImage}
+                                className='w-52'
+                                alt='image-pizza' />
+                        </div>
 
-                            <div className='flex items-center'>
-                                <input type="radio" id="G" name='pizza-choose' className='w-10 h-10' />
-                                <label htmlFor="G">G</label>
+                        <div>
+                            <div className='w-full h-full flex items-center justify-center gap-4 font-["Montserrat"] text-2xl'>
+                                <div className='flex items-center'>
+                                    <input type="radio" id='P' name='pizza-choose' className='w-7 h-7 cursor-pointer' />
+                                    <label htmlFor="P">P</label>
+                                </div>
+                                <div className='flex items-center'>
+                                    <input type="radio" id='M' name='pizza-choose' className='w-7 h-7 cursor-pointer' />
+                                    <label htmlFor="M">M</label>
+                                </div>
+                                <div className='flex items-center'>
+                                    <input type="radio" id="G" name='pizza-choose' className='w-7 h-7 cursor-pointer' />
+                                    <label htmlFor="G">G</label>
+                                </div>
                             </div>
-                        </div>   
+                            <div className='flex items-center justify-center gap-4 font-["Montserrat"] mt-2'>
+                                <button type='button' className='w-10' onClick={handleQuantM}>-</button>
+                                <div className='flex justify-center w-6'><p>{quant}</p></div>
+                                <button type='button' className='w-10' onClick={handleQuantP}>+</button>
+                            </div>
+                        </div>
+
                         <p>{pizzaDesc}</p> 
                         <button type='button'>Adicionar ao carrinho</button>                
             </Modal>
