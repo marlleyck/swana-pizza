@@ -27,6 +27,7 @@ export const Options = () => {
     const [titleModal, setTitleModal] = useState('')
     const [pizzaImage, setPizzaImage] = useState('')
     const [pizzaDesc, setPizzaDesc] = useState('')
+    const [pricePizza, setPricePizza] = useState('34.00')
     const [quant, setQuant] = useState(0)
 
     const [pizzas, setPizzas] = useState<PizzaJson>()
@@ -82,39 +83,48 @@ export const Options = () => {
                             src={iconClose} alt="close"
                             onClick={() => setModalIsOpen(false)} />
 
-                        <div className='flex items-center justify-center flex-col'>
-                            <h2>{titleModal}</h2>
-                            
+                        <h2 className="absolute top-10">{titleModal}</h2>
+
+                        <div className='flex items-center justify-center flex-col absolute inset-y-1/2 mt-2'>
                             <img
                                 src={pizzaImage}
-                                className='w-52'
+                                className='w-52 mb-5'
                                 alt='image-pizza' />
-                        </div>
-
-                        <div>
-                            <div className='w-full h-full flex items-center justify-center gap-4 font-["Montserrat"] text-2xl'>
-                                <div className='flex items-center'>
-                                    <input type="radio" id='P' name='pizza-choose' className='w-7 h-7 cursor-pointer' />
-                                    <label htmlFor="P">P</label>
-                                </div>
-                                <div className='flex items-center'>
-                                    <input type="radio" id='M' name='pizza-choose' className='w-7 h-7 cursor-pointer' />
-                                    <label htmlFor="M">M</label>
-                                </div>
-                                <div className='flex items-center'>
-                                    <input type="radio" id="G" name='pizza-choose' className='w-7 h-7 cursor-pointer' />
-                                    <label htmlFor="G">G</label>
+                            <div>
+                                <div className='w-full h-full flex items-center justify-center gap-4 font-["Montserrat"] text-2xl mb-5'>
+                                    <div className='flex items-center'>
+                                        <input type="radio" id='P' name='pizza-choose' className='w-7 h-7 cursor-pointer' />
+                                        <label htmlFor="P">P</label>
+                                    </div>
+                                    <div className='flex items-center'>
+                                        <input type="radio" id='M' name='pizza-choose' className='w-7 h-7 cursor-pointer' />
+                                        <label htmlFor="M">M</label>
+                                    </div>
+                                    <div className='flex items-center'>
+                                        <input type="radio" id="G" name='pizza-choose' className='w-7 h-7 cursor-pointer' defaultChecked/>
+                                        <label htmlFor="G">G</label>
+                                    </div>
                                 </div>
                             </div>
-                            <div className='flex items-center justify-center gap-4 font-["Montserrat"] mt-2'>
-                                <button type='button' className='w-10' onClick={handleQuantM}>-</button>
-                                <div className='flex justify-center w-6'><p>{quant}</p></div>
-                                <button type='button' className='w-10' onClick={handleQuantP}>+</button>
+                            <div className='flex items-center justify-center flex-col gap-4 font-["Montserrat"]'>
+                                <div className='flex items-center'>
+                                    <button type='button' className='w-10' onClick={handleQuantM}>-</button>
+                                    <div className='flex justify-center w-6'><p>{quant}</p></div>
+                                    <button type='button' className='w-10' onClick={handleQuantP}>+</button>
+                                </div>
+                                <div className='flex justify-center flex-col'>
+                                    <p className='text-3xl'>R${pricePizza}</p>
+                                    <div className='break-words px-4'>
+                                        <p className=' text-center'>{pizzaDesc}</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-                        <p>{pizzaDesc}</p> 
-                        <button type='button'>Adicionar ao carrinho</button>                
+                        
+                        <button type='button' 
+                            className='font-["Montserrat"] font-bold text-white bg-orange-400 p-3 rounded-2xl duration-300 absolute bottom-5 text-xl'>
+                            Adicionar ao carrinho
+                        </button>                
             </Modal>
 
             <main className="w-full h-[calc(100vh_-_4rem)] bg-bg-option bg-center bg-no-repeat bg-cover flex items-center justify-center">

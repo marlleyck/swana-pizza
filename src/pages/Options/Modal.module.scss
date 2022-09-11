@@ -1,7 +1,7 @@
 .modal {
     width: 100%;
     max-width: 550px;
-    max-height: 600px;
+    height: 630px;
     font-family: 'Montserrat';
     background: #F0F2F5;;
     padding: 3rem;
@@ -9,10 +9,14 @@
     border-radius: 2rem;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: column;
     outline: none;
     gap: 2rem;
+
+    button:hover {
+        filter: brightness(0.9);
+    }
 
     h2 {
         font-size: 2.8rem;
@@ -20,20 +24,6 @@
 
     p {
         text-align: center;
-    }
-
-    button {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: white;
-        background-color: orange;
-        padding: 10px;
-        border-radius: 15px;
-        transition: .3s;
-
-        &:hover {
-            filter: brightness(0.9);
-        }
     }
 }
 
